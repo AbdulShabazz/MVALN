@@ -152,6 +152,452 @@ The fields `C`, `D`, and `E` are absent.
 
 ---
 
+## DNA/RNA-Inspired Constituent Design
+
+MVALN is inspired not only by neuronal signaling, but by the biological instruction system that constructs, specializes, operates, and repairs organic neural networks.
+
+A biological neural network does not begin as a fixed graph of neurons with assigned connection weights. Its constituent structure emerges through a layered process:
+
+```text
+DNA
+→ transcription
+→ RNA
+→ translation and regulation
+→ proteins and cellular machinery
+→ differentiated neurons
+→ synaptic organization
+→ adaptive neural behavior
+```
+
+MVALN abstracts this process without attempting to simulate literal biochemistry.
+
+The central design analogy is:
+
+```text
+DNA-like grammar
+→ RNA-like instruction instances
+→ virtual-machine execution
+→ constituent specialization
+→ network formation
+→ adaptive behavior
+```
+
+### DNA-like persistent grammar
+
+DNA provides a durable generative specification rather than directly executing every cellular operation.
+
+The corresponding MVALN structure is a persistent grammar:
+
+```text
+Genome G =
+    opcode vocabulary
+    + operand-field rules
+    + composition rules
+    + type constraints
+    + state-transition rules
+    + program-generation rules
+```
+
+`G` defines the operations that may exist and the rules under which they may be composed.
+
+It does not require every final program to be encoded explicitly.
+
+Instead:
+
+```text
+Program Π =
+    Develop(G, Context, State, Objective)
+```
+
+The resulting program may vary according to context while remaining derived from the same underlying grammar.
+
+### RNA-like executable instructions
+
+RNA is treated as the conceptual analogue of a transient, context-specific instruction instance.
+
+An RNA-like MVALN instruction may be expressed as:
+
+```text
+Instruction mᵢ =
+    Instantiate(
+        Genome: G,
+        Context: Cᵢ,
+        State: Sᵢ,
+        Inputs: Xᵢ
+    )
+```
+
+The instruction contains:
+
+```text
+mᵢ =
+    opcode
+    + supplied operand fields
+    + omitted operand fields
+    + attributes
+    + destination or effect
+    + lifetime
+```
+
+For example:
+
+```text
+m₀ = ADD(
+    A: X,
+    B: X
+)
+```
+
+or:
+
+```text
+m₁ = CONTRACT(
+    A: Input,
+    B: Parameter.W,
+    indices: "bi,io->bo"
+)
+```
+
+An instruction may be:
+
+* created when required,
+* executed locally,
+* reused,
+* modified,
+* suppressed,
+* duplicated,
+* or discarded.
+
+This differs from a conventional ANN layer, which normally remains permanently embedded in a fixed computation graph.
+
+### Virtual machines as cellular constituents
+
+Each MVALN virtual machine is analogous to an independently operating biological constituent.
+
+A virtual machine contains:
+
+```text
+VMᵢ =
+    local opcode program Πᵢ
+    + local state Sᵢ
+    + parameter set Θᵢ
+    + input interface Iᵢ
+    + output interface Oᵢ
+```
+
+Its state transition is:
+
+```text
+(Sᵢ[t + 1], Yᵢ[t]) =
+    Execute(
+        Program: Πᵢ,
+        State: Sᵢ[t],
+        Parameters: Θᵢ,
+        Inputs: Xᵢ[t]
+    )
+```
+
+Different virtual machines may develop different functional roles even when derived from the same grammar.
+
+Examples include:
+
+* feature extraction,
+* routing,
+* memory,
+* comparison,
+* prediction,
+* error detection,
+* state regulation,
+* temporal integration,
+* symbolic transformation,
+* or program generation.
+
+Specialization therefore occurs at the program level:
+
+```text
+VM role =
+    SpecializedProgram(
+        shared grammar,
+        local context,
+        execution history,
+        task pressure
+    )
+```
+
+### Constituent network formation
+
+The complete MVALN is a network of interacting virtual machines:
+
+```text
+MVALN =
+    {VM₀, VM₁, ..., VMₙ}
+    + communication structure
+    + shared environment
+    + developmental rules
+```
+
+A virtual machine may consume outputs produced by other virtual machines:
+
+```text
+Xᵢ[t] =
+    Route(
+        Y₀[t],
+        Y₁[t],
+        ...,
+        Yₙ[t],
+        Context[t]
+    )
+```
+
+The global system transition is:
+
+```text
+NetworkState[t + 1] =
+    Compose(
+        VM₀[t + 1],
+        VM₁[t + 1],
+        ...,
+        VMₙ[t + 1]
+    )
+```
+
+The network topology need not be permanently fixed.
+
+Virtual machines and connections may be:
+
+* created,
+* removed,
+* specialized,
+* duplicated,
+* merged,
+* disabled,
+* or reassigned.
+
+### Development rather than fixed construction
+
+A conventional ANN is usually constructed before training:
+
+```text
+Define topology
+→ initialize parameters
+→ optimize parameters
+```
+
+MVALN may instead develop its executable structure:
+
+```text
+Define grammar
+→ instantiate programs
+→ evaluate behavior
+→ specialize constituents
+→ alter communication
+→ preserve effective structures
+```
+
+The model-development process may be written as:
+
+```text
+M[t + 1] =
+    Develop(
+        Model: M[t],
+        Experience: E[t],
+        Objective: J,
+        Constraints: K
+    )
+```
+
+Where `Develop` may alter:
+
+```text
+opcode selection
+operand binding
+program topology
+virtual-machine count
+virtual-machine specialization
+state structure
+communication topology
+numerical parameters
+```
+
+### Regulation and conditional expression
+
+Biological systems do not express every available instruction continuously. Activity depends on local conditions and regulatory signals.
+
+MVALN applies the same principle:
+
+```text
+Enabled(mᵢ, t) =
+    Predicate(
+        Context[t],
+        State[t],
+        Inputs[t],
+        RegulatorySignals[t]
+    )
+```
+
+Execution becomes:
+
+```text
+Resultᵢ[t] =
+    Execute(mᵢ)     when Enabled(mᵢ, t) is true
+    NoOperation     otherwise
+```
+
+This permits context-dependent program expression without deleting the underlying capability.
+
+A program may therefore exist in one of several states:
+
+```text
+inactive
+primed
+active
+suppressed
+retired
+```
+
+### Learning at multiple organizational levels
+
+MVALN learning may occur simultaneously at several levels.
+
+```text
+Parameter learning =
+    modify numerical values
+```
+
+```text
+Instruction learning =
+    modify opcodes, operands, or attributes
+```
+
+```text
+Program learning =
+    modify instruction composition
+```
+
+```text
+Constituent learning =
+    modify a virtual machine's specialization
+```
+
+```text
+Network learning =
+    modify virtual-machine communication and topology
+```
+
+```text
+Developmental learning =
+    modify the rules that generate future programs
+```
+
+The complete learning process may therefore be expressed as:
+
+```text
+Learning =
+    parameter adaptation
+    + opcode adaptation
+    + operand adaptation
+    + program adaptation
+    + state adaptation
+    + constituent specialization
+    + network reorganization
+    + grammar adaptation
+```
+
+### Biological correspondence
+
+The intended abstraction is:
+
+```text
+Biological DNA
+≈ persistent opcode grammar and developmental rules
+```
+
+```text
+Biological RNA
+≈ instantiated, transient, context-dependent instructions
+```
+
+```text
+Proteins and molecular machinery
+≈ primitive opcode implementations
+```
+
+```text
+Cell
+≈ stateful virtual machine
+```
+
+```text
+Gene regulation
+≈ conditional instruction activation
+```
+
+```text
+Cell differentiation
+≈ virtual-machine specialization
+```
+
+```text
+Neural development
+≈ program and communication-topology construction
+```
+
+```text
+Synaptic plasticity
+≈ runtime operand, parameter, routing, and state adaptation
+```
+
+```text
+Organic neural network
+≈ interacting population of specialized stateful machines
+```
+
+This correspondence is architectural rather than biochemical.
+
+MVALN does not claim that software opcodes are chemically equivalent to RNA or that virtual machines reproduce living cells. The biological system provides a design principle:
+
+```text
+Complex adaptive intelligence may emerge from
+a shared generative grammar,
+context-specific instruction expression,
+specialized stateful constituents,
+and reorganizable communication.
+```
+
+### Constituent-design hypothesis
+
+The MVALN constituent-design hypothesis is:
+
+```text
+A learning system may be more general when it learns
+how to generate, specialize, regulate, and connect
+executable constituents,
+rather than only adjusting weights within
+a predetermined network.
+```
+
+Accordingly:
+
+```text
+Conventional ANN =
+    fixed constituent type
+    + fixed topology class
+    + learned connection parameters
+```
+
+Whereas:
+
+```text
+MVALN =
+    generative instruction grammar
+    + RNA-like executable programs
+    + specialized virtual-machine constituents
+    + adaptive communication topology
+    + persistent and transient state
+```
+
+The model is therefore intended to emulate the organizational principle by which biological instruction systems construct neural machinery, rather than merely emulating the electrical output behavior of individual neurons.
+
 ## Operand-field semantics
 
 The operand fields `A` through `E` are not physical processor registers.
